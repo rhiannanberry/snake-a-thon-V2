@@ -5,11 +5,16 @@ using UnityEngine;
 public class SnakeMove : MonoBehaviour {
     public float maxSpeed = 5f;
     public float acceleration = 0.5f;
-    private float speed = 0f;
+    public GameObject snakeBody;
+    public float speed = 0f;
+    private GameObject controllerObj;
+    private Controller Controller;
+
 	// Use this for initialization
 	void Start () {
-		
-	}
+        controllerObj = GameObject.Find("Controller");
+        Controller = (Controller)controllerObj.GetComponent(typeof(Controller));
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,4 +26,18 @@ public class SnakeMove : MonoBehaviour {
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
         transform.position = Vector2.MoveTowards(transform.position, mousePos, Time.deltaTime * speed);
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Food")
+        {
+            maxSpeed += 0.5f;
+            Instantiate(snakeBody, transform.position-transform.up, transform.rotation);
+            foreach(GameObject food in GameObject.FindGameObjectsWithTag("Food"))
+            {
+                Destroy(food);
+            }
+            Controller.spawnFood(Random.Range(1,4));
+        }
+    }
 }
