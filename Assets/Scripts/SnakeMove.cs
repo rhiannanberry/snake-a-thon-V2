@@ -8,6 +8,7 @@ public class SnakeMove : MonoBehaviour {
     public GameObject snakeBody;
     public float speed = 0f;
     private GameObject controllerObj;
+    public List<GameObject> bodyParts = new List<GameObject>();
     private Controller Controller;
 
 	// Use this for initialization
@@ -32,7 +33,17 @@ public class SnakeMove : MonoBehaviour {
         if (collision.gameObject.tag == "Food")
         {
             maxSpeed += 0.5f;
-            Instantiate(snakeBody, transform.position-transform.up, transform.rotation);
+            GameObject newBody;
+            if (bodyParts.Count == 0)
+            {
+                newBody = Instantiate(snakeBody, transform.position - transform.up, transform.rotation);
+            } else
+            {
+                GameObject prevTail = bodyParts[bodyParts.Count - 1];
+                newBody = Instantiate(snakeBody, prevTail.transform.position - transform.up, prevTail.transform.rotation);
+            }
+           
+            //bodyParts.Add(newBody);
             foreach(GameObject food in GameObject.FindGameObjectsWithTag("Food"))
             {
                 Destroy(food);
