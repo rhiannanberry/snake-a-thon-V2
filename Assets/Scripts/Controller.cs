@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
 {
@@ -32,4 +33,8 @@ public class Controller : MonoBehaviour
             Transform food = Instantiate(foodPrefab, loc, Quaternion.identity);
         }
     }
+    public void LoadScene(int scene) {
+        SceneManager.LoadScene(scene);
+    }
+
 }

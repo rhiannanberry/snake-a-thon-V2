@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a819c6c971b73744b93c09928bfbf92a
+timeCreated: 1509772275
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Unlearned BRK
+  fontNames:
+  - Unlearned BRK
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

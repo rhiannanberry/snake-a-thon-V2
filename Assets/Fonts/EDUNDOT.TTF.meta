@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a175c967fc4e84040b96eaaeaf644ec4
+timeCreated: 1509772389
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Edit Undo Dot BRK
+  fontNames:
+  - Edit Undo Dot BRK
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

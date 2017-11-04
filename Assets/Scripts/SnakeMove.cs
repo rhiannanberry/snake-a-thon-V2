@@ -49,6 +49,11 @@ public class SnakeMove : MonoBehaviour {
                 Destroy(food);
             }
             Controller.spawnFood(Random.Range(1,4));
+        } else {
+            foreach(GameObject body in bodyParts) {
+                Destroy(body);
+            }
+            Destroy(gameObject);
         }
     }
 }
