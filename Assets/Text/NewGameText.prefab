@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222534237196241972}
   - component: {fileID: 114188585195406456}
   - component: {fileID: 114201019703684696}
+  - component: {fileID: 114106419785393702}
   m_Layer: 5
   m_Name: NewGameText
   m_TagString: Untagged
@@ -29,6 +30,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114106419785393702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962332120950026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684f15355abd0d44eaeb31a5dcc11048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rainbow: 0
+  scale: 0
+  foreground: 1
+  baseColor: {r: 0, g: 0, b: 0, a: 0}
+  loopTime: 3
+  scaleUpFactor: 1.2
 --- !u!114 &114188585195406456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -50,18 +68,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1dce808d5d1ee414195f47ff05d0ec12, type: 3}
-    m_FontSize: 16
+    m_FontSize: 58
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 93
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: new game
+  m_Text: new run
 --- !u!114 &114201019703684696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,7 +119,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114585214211264136, guid: e7295931eb416b74ab98c25022cb3f05,
+      - m_Target: {fileID: 114564980723474014, guid: e7295931eb416b74ab98c25022cb3f05,
           type: 2}
         m_MethodName: LoadScene
         m_Mode: 3
@@ -128,14 +146,14 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962332120950026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7000122, y: 45.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -75.825, y: 45, z: 0}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.70001, y: 45.6}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -75.825, y: 45}
+  m_SizeDelta: {x: 450, y: 65}
+  m_Pivot: {x: 0, y: 0.5}

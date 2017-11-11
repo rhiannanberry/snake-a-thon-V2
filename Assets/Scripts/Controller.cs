@@ -5,24 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
 {
-    [System.Serializable]
-    public struct Palette
-    {
-        public string name;
-        public Color main;
-        public Color secondary;
-        public Palette(string n, Color one, Color two)
-        {
-            name = n;
-            main = one;
-            secondary = two;
-        }
-    }
-
+    
+    public GameObject headPrefab;
     public Transform foodPrefab;
-    GameObject player;
+    public int currentPalette = 0;
 
-    public List<Palette> palette = new List<Palette>();
+    public List<Palette> palettes = new List<Palette>();
 
     private void Awake()
     {
@@ -32,16 +20,10 @@ public class Controller : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //adjust this based on what scene ur in
-        if (SceneManager.GetActiveScene().buildIndex == 0 )
-        {
-
-        } else
-        {
-            player = GameObject.Find("SnakeHead");
-            spawnFood(30);
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Persistent");
+        if (objs.Length >= 3) {
+            Destroy(gameObject);
         }
-        
     }
 
     // Update is called once per frame
@@ -50,13 +32,13 @@ public class Controller : MonoBehaviour
 
     }
 
-    public void spawnFood(int pieces)
+    public void spawnFood(GameObject head, int pieces)
     {
         //32 across
         for (int i = 0; i < pieces; i++)
         {
             Vector2 loc = Tools.randomInRange();
-            while (Vector2.Distance(loc, player.transform.position) < 3)
+            while (Vector2.Distance(loc, head.transform.position) < 3)
             {
                 loc = Tools.randomInRange();
             }
@@ -65,6 +47,11 @@ public class Controller : MonoBehaviour
     }
     public void LoadScene(int scene) {
         SceneManager.LoadScene(scene);
+        
+    }
+
+    public Palette getCurrentPalette() {
+        return palettes[currentPalette];
     }
 
 }

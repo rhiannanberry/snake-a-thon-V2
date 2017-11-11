@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114980272538797470}
   - component: {fileID: 61348361786712056}
   - component: {fileID: 50430849012512974}
+  - component: {fileID: 114788508162115040}
   m_Layer: 0
   m_Name: SnakeHead
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1468925657080056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5000715, y: -2.14, z: 0}
+  m_LocalPosition: {x: 0.07, y: -0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,6 +89,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114788508162115040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1468925657080056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968ed860cb3811a47a376f67014cefcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114980272538797470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,6 +115,7 @@ MonoBehaviour:
   acceleration: 0.5
   snakeBody: {fileID: 1480430293692310, guid: ce5d74b2ea1d77c45868d0248e61e7c1, type: 2}
   speed: 0
+  bodyParts: []
 --- !u!212 &212901380260857744
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TextEffects : MonoBehaviour {
+    public bool rainbow;
+    public bool scale;
+    public bool foreground;
+
     public Color baseColor;
     public float loopTime = 3.0f;
     public float scaleUpFactor = 1.2f;
@@ -14,17 +18,24 @@ public class TextEffects : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         word = gameObject.GetComponent<Text>();
-        Color.RGBToHSV(baseColor, out hue, out saturation, out value);
-        startScale = transform.localScale.x;
-        deltaTime = 1.0f / loopTime;
-
+        if (rainbow) {
+            Color.RGBToHSV(baseColor, out hue, out saturation, out value);
+            startScale = transform.localScale.x;
+            deltaTime = 1.0f / loopTime;
+        }
+        Palette colors = GameObject.Find("Controller").GetComponent<Controller>().getCurrentPalette();
+        word.color = foreground ? colors.main : colors.secondary;
+        Debug.Log(word.color.ToString());
     }
 
 	// Update is called once per frame
 	void Update () {
-        hue = (hue + deltaTime*Time.deltaTime) % 1;
-        transform.localScale = (Vector2.one * startScale) + Vector2.one * Mathf.PingPong(deltaTime * Time.time, scaleUpFactor - startScale); 
-        //transform.localScale = new Vector2(startScale + Mathf.PingPong(deltaTime*Time.time, scaleUpFactor - startScale), startScale + Mathf.PingPong(deltaTime *Time.time, scaleUpFactor - startScale));
-        word.color = Color.HSVToRGB(hue, saturation, value);
+        if (rainbow) {
+            hue = (hue + deltaTime * Time.deltaTime) % 1;
+            word.color = Color.HSVToRGB(hue, saturation, value);
+        }
+        if (scale) {
+            transform.localScale = (Vector2.one * startScale) + Vector2.one * Mathf.PingPong(deltaTime * Time.time, scaleUpFactor - startScale);
+        }
 	}
 }

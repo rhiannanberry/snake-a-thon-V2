@@ -15,6 +15,7 @@ public class SnakeMove : MonoBehaviour {
 	void Start () {
         controllerObj = GameObject.Find("Controller");
         Controller = (Controller)controllerObj.GetComponent(typeof(Controller));
+        Controller.spawnFood(gameObject, 30);
     }
 	
 	// Update is called once per frame
@@ -48,7 +49,7 @@ public class SnakeMove : MonoBehaviour {
             {
                 Destroy(food);
             }
-            Controller.spawnFood(Random.Range(1,4));
+            Controller.spawnFood(gameObject, Random.Range(1,4));
         } else {
             foreach(GameObject body in bodyParts) {
                 Destroy(body);
