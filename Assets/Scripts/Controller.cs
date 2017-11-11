@@ -5,13 +5,43 @@ using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
 {
+    [System.Serializable]
+    public struct Palette
+    {
+        public string name;
+        public Color main;
+        public Color secondary;
+        public Palette(string n, Color one, Color two)
+        {
+            name = n;
+            main = one;
+            secondary = two;
+        }
+    }
+
     public Transform foodPrefab;
     GameObject player;
+
+    public List<Palette> palette = new List<Palette>();
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Use this for initialization
     void Start()
     {
-        player = GameObject.Find("SnakeHead");
-        spawnFood(30);
+        //adjust this based on what scene ur in
+        if (SceneManager.GetActiveScene().buildIndex == 0 )
+        {
+
+        } else
+        {
+            player = GameObject.Find("SnakeHead");
+            spawnFood(30);
+        }
+        
     }
 
     // Update is called once per frame

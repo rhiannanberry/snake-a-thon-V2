@@ -5143,12 +5143,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114585214211264136, guid: e7295931eb416b74ab98c25022cb3f05,
-        type: 2}
-      propertyPath: foodPrefab
-      value: 
-      objectReference: {fileID: 4229535922230124, guid: 9c54706b007b91f41b2e4dd781e7c78a,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7295931eb416b74ab98c25022cb3f05, type: 2}
   m_IsPrefabParent: 0
@@ -6308,7 +6302,7 @@ Tilemap:
     e33: 1
   m_TileRefreshArray:
   - serializedVersion: 1
-    m_DirtyIndex: 2
+    m_DirtyIndex: 0
 --- !u!19719996 &1476629124
 TilemapCollider2D:
   m_ObjectHideFlags: 0
