@@ -12,8 +12,10 @@ public class Controller : MonoBehaviour
     public GameObject headPrefab;
     public Transform foodPrefab;
     public int currentPalette = 0;
-
     public List<Palette> palettes = new List<Palette>();
+
+    private Text timeText;
+    private float time = 0;
 
     private void Awake()
     {
@@ -32,7 +34,10 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (SceneManager.GetActiveScene().buildIndex == 1) {
+            time += Time.deltaTime;
+            timeText.text = System.Math.Round(time, 2).ToString();
+        }
     }
 
     public void spawnFood(GameObject head, int pieces)
@@ -50,7 +55,11 @@ public class Controller : MonoBehaviour
     }
     public void LoadScene(int scene) {
         SceneManager.LoadScene(scene);
-        
+        if (scene == 1) {
+            time = 0;
+            timeText = GameObject.Find("Time").GetComponent<Text>();
+        }
+
     }
 
     public Palette getCurrentPalette() {
