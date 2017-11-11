@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
+using UnityEngine.UI;
+
 
 public class Controller : MonoBehaviour
 {
@@ -52,6 +55,19 @@ public class Controller : MonoBehaviour
 
     public Palette getCurrentPalette() {
         return palettes[currentPalette];
+    }
+    public void setCurrentPalette(int num) {
+        currentPalette = num;
+        GameObject.Find("Foreground").GetComponent<Tilemap>().color = palettes[currentPalette].main;
+        GameObject.Find("Background").GetComponent<Tilemap>().color = palettes[currentPalette].secondary;
+        GameObject canvas = GameObject.Find("Canvas");
+        Text[] text = GameObject.Find("Canvas").GetComponentsInChildren<Text>();
+        foreach (Text txt in text) {
+            txt.color = palettes[currentPalette].main;
+        }
+        //GameObject[] pageSelectChildren = GameObject.Find("PageSelect").transform.getChi
+        //Text[] text = GameObject.Find("PageSelect").GetComponentInChildren<Text>();
+
     }
 
 }
