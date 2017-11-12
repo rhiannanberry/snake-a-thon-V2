@@ -25,7 +25,6 @@ public class TextEffects : MonoBehaviour {
         }
         Palette colors = GameObject.Find("Controller").GetComponent<Controller>().getCurrentPalette();
         word.color = foreground ? colors.main : colors.secondary;
-        Debug.Log(word.color.ToString());
     }
 
 	// Update is called once per frame
