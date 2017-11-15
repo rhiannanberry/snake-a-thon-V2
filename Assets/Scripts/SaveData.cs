@@ -10,8 +10,11 @@ public class SaveData {
 
     public int currentPalette;
     public List<Palette> palettes;
+    public bool newSave;
+
     public SaveData() {
         currentPalette = 0;
+        newSave = true;
         //how to set palette pls tell
         stats = new Stats();
     }
@@ -22,17 +25,18 @@ public class SaveData {
 [System.Serializable]
 public class Stats {
     //total time, total food eaten, highscore, highest time, acheivements (bool that shows locked)
-    int highScore, totalScore;
-    float totalTime, highestTime;
+    public int highScore, totalScore, deaths;
+    public float totalTime, highestTime;
     //have a list of acheivements and bool on whether theyre unlocked
 
     //RUN STATS
-    int score;
-    float time;
-    List<int> acheivementsUnlocked;
+    public int score;
+    public float time;
+    public List<int> acheivementsUnlocked;
 
     //ACHEIVEMENTES
     public Stats() {
+        deaths = 0;
         highScore = 0;
         totalScore = 0;
         totalTime = 0f;

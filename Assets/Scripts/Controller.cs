@@ -14,6 +14,7 @@ public class Controller : MonoBehaviour
     public GameObject headPrefab;
     public Transform foodPrefab;
     public int currentPalette = 0;
+    public SaveData save;
     public List<Palette> palettes = new List<Palette>();
 
     private void Awake()
@@ -68,6 +69,22 @@ public class Controller : MonoBehaviour
         }
     }
 
+    public void attachLoadData()
+    {
+        save = SaveLoad.saveData;
+        currentPalette = save.currentPalette;
+        if (!save.newSave)
+        {
+            palettes = save.palettes;
+        }
+    }
+
+    public void addToScore(int score)
+    {
+        save.stats.score += score;
+        save.stats.totalScore += score;
+    }
+
 }
 
 public static class SaveLoad {
@@ -85,7 +102,8 @@ public static class SaveLoad {
         if (File.Exists(Application.persistentDataPath + "/saveData.gd")) {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/saveData.gd", FileMode.Open);
-            SaveLoad.saveData = (SaveData)bf.Deserialize(file);
+            saveData = (SaveData)bf.Deserialize(file);
+            
         } else {
             //new game new life. 
             Debug.Log("Wow no file, im shocked");
