@@ -53,95 +53,125 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headPrefab: {fileID: 1468925657080056, guid: 0f903ae0a35eb0445b9f356732c7a26b, type: 2}
   foodPrefab: {fileID: 4229535922230124, guid: 9c54706b007b91f41b2e4dd781e7c78a, type: 2}
-  currentPalette: 1
+  currentPalette: 0
   palettes:
-  - name: fuck you
-    main: {r: 1, g: 0.27205884, b: 0.27205884, a: 1}
-    secondary: {r: 0.375, g: 1, b: 0.89655167, a: 1}
-  - name: big meme ranch
-    main: {r: 0.49126002, g: 0.63235295, b: 0.4463668, a: 1}
-    secondary: {r: 0.6551725, g: 0.375, b: 1, a: 1}
-  - name: frenchmen
-    main: {r: 0.4463668, g: 0.47073737, b: 0.63235295, a: 1}
-    secondary: {r: 0.6544118, g: 0.6544118, b: 0.6544118, a: 1}
+  - name: it's not a phase
+    main: {r: 0.5647059, g: 0, b: 1, a: 1}
+    secondary: {r: 0.105882354, g: 0.105882354, b: 0.105882354, a: 1}
+    locked: 0
+  - name: im pretty
+    main: {r: 0.8039216, g: 0.49019608, b: 0.9098039, a: 1}
+    secondary: {r: 0.44313726, g: 0.8117647, b: 0.92156863, a: 1}
+    locked: 0
+  - name: mighty jungle
+    main: {r: 0.41960785, g: 0.21176471, b: 0, a: 1}
+    secondary: {r: 0.12156863, g: 0.6, b: 0.28627452, a: 1}
+    locked: 0
   - name: hella
     main: {r: 0.63235295, g: 0.4463668, b: 0.6041344, a: 1}
     secondary: {r: 0.90002686, g: 0.8247729, b: 0.99264705, a: 1}
+    locked: 1
   - name: poppee
     main: {r: 0.96105474, g: 1, b: 0.29411763, a: 1}
     secondary: {r: 1, g: 0.6831643, b: 0.47794116, a: 1}
+    locked: 1
+  - name: watermelons
+    main: {r: 0.6666667, g: 0.97647065, b: 0.5686275, a: 1}
+    secondary: {r: 0.9490196, g: 0.6431373, b: 0.6784314, a: 1}
+    locked: 0
+  - name: deep vein thrombosis
+    main: {r: 0.9490196, g: 0.516, b: 0.6431373, a: 1}
+    secondary: {r: 0.71, g: 0.38411, b: 0.6226616, a: 1}
+    locked: 1
+  - name: soliiiiiiid snake
+    main: {r: 0.69803923, g: 0.7137255, b: 0.73333335, a: 1}
+    secondary: {r: 0.45098042, g: 0.48235297, b: 0.48627454, a: 1}
+    locked: 1
+  - name: bled
+    main: {r: 0.60784316, g: 0.7725491, b: 0.89019614, a: 1}
+    secondary: {r: 0.6784314, g: 0.18039216, b: 0.2392157, a: 1}
+    locked: 1
+  - name: school spirit
+    main: {r: 0.08627451, g: 0.15686275, b: 0.54901963, a: 1}
+    secondary: {r: 0.93725497, g: 0.9058824, b: 0, a: 1}
+    locked: 1
+  - name: canned cranberries
+    main: {r: 0.427451, g: 0, b: 0.227451, a: 1}
+    secondary: {r: 0.36862746, g: 0.5529412, b: 0.25490198, a: 1}
+    locked: 1
+  - name: ouch
+    main: {r: 0.37647063, g: 0.37254903, b: 0.3647059, a: 1}
+    secondary: {r: 0.15294118, g: 0.8588236, b: 0.83921576, a: 1}
+    locked: 1
+  - name: double ouch
+    main: {r: 0, g: 0, b: 0, a: 1}
+    secondary: {r: 1, g: 1, b: 1, a: 1}
+    locked: 1
+  - name: hcuo elbuod
+    main: {r: 1, g: 1, b: 1, a: 1}
+    secondary: {r: 0, g: 0, b: 0, a: 1}
+    locked: 1
+  - name: color blind
+    main: {r: 0.21176472, g: 0.22352943, b: 0.15294118, a: 1}
+    secondary: {r: 0.52156866, g: 0.52156866, b: 0.7019608, a: 1}
+    locked: 1
+  - name: sports!
+    main: {r: 1, g: 0.54901963, b: 0.25882354, a: 1}
+    secondary: {r: 0.24313727, g: 0.16078432, b: 0.4666667, a: 1}
+    locked: 1
+  - name: jangle
+    main: {r: 0.29803923, g: 0.44705886, b: 0.24705884, a: 1}
+    secondary: {r: 0.85098046, g: 0.8862746, b: 0.3372549, a: 1}
+    locked: 1
+  - name: peppermint pain
+    main: {r: 1, g: 1, b: 1, a: 1}
+    secondary: {r: 1, g: 0.32156864, b: 0.38823533, a: 1}
+    locked: 1
+  - name: sick pig
+    main: {r: 1, g: 0.8235295, b: 0.98823535, a: 1}
+    secondary: {r: 0.227451, g: 0.20000002, b: 0.20000002, a: 1}
+    locked: 1
+  - name: scaly
+    main: {r: 0.427451, g: 0.43921572, b: 0.37647063, a: 1}
+    secondary: {r: 0.8588236, g: 0.7843138, b: 0.49803925, a: 1}
+    locked: 1
+  - name: shamrock
+    main: {r: 0.29803923, g: 0.22352943, b: 0.34117648, a: 1}
+    secondary: {r: 0.43921572, g: 0.6392157, b: 0.49803925, a: 1}
+    locked: 1
+  - name: dynamic lighting
+    main: {r: 0.57254905, g: 0.50980395, b: 0.5529412, a: 1}
+    secondary: {r: 0.9215687, g: 0.93725497, b: 0.7490196, a: 1}
+    locked: 0
+  - name: deep dive
+    main: {r: 0.0627451, g: 0.18039216, b: 0.2901961, a: 1}
+    secondary: {r: 0.34901962, g: 0.53333336, b: 1, a: 1}
+    locked: 1
   - name: 13 children
     main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
     secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
+    locked: 1
   - name: 13 children
     main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
     secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
+    locked: 0
   - name: 13 children
     main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
     secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
+    locked: 0
   - name: 13 children
     main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
     secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
+    locked: 0
   - name: 13 children
     main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
     secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
+    locked: 0
   - name: 13 children
     main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
     secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
+    locked: 0
   - name: 13 children
     main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
     secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
-  - name: 13 children
-    main: {r: 0.9191176, g: 0.31763622, b: 0.31763622, a: 1}
-    secondary: {r: 0.66700345, g: 0.97794116, b: 0.56806874, a: 1}
+    locked: 0

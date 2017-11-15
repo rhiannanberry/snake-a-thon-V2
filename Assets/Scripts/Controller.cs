@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using System.IO;
 
 
 public class Controller : MonoBehaviour
@@ -17,6 +19,7 @@ public class Controller : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        SaveLoad.Load();
     }
 
     // Use this for initialization
@@ -65,4 +68,27 @@ public class Controller : MonoBehaviour
         }
     }
 
+}
+
+public static class SaveLoad {
+    public static SaveData saveData = new SaveData();
+
+    public static void Save() {
+        saveData = SaveData.data;
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/saveData.gd");
+        bf.Serialize(file, SaveLoad.saveData);
+        file.Close();
+    }
+
+    public static void Load() {
+        if (File.Exists(Application.persistentDataPath + "/saveData.gd")) {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveData.gd", FileMode.Open);
+            SaveLoad.saveData = (SaveData)bf.Deserialize(file);
+        } else {
+            //new game new life. 
+            Debug.Log("Wow no file, im shocked");
+        }
+    }
 }
