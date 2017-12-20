@@ -29,6 +29,7 @@ public class SnakeBodyMove : MonoBehaviour {
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
         float speed = head.GetComponent<SnakeMove>().speed;
         //im mostly pleased with this movement
+        //just kidding i fucking hate it
         if (Vector2.Distance(parent.transform.position, transform.position) > 1)
         {
             transform.position = Vector2.MoveTowards(transform.position, parent.transform.position, Time.deltaTime * (speed - .05f*Mathf.Log(position+1)*speed));
@@ -37,5 +38,9 @@ public class SnakeBodyMove : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, parent.transform.position, Time.deltaTime * (speed - .2f * Mathf.Log(position + 1) * speed));
 
         }
+    }
+
+    void Rotation() {
+
     }
 }
