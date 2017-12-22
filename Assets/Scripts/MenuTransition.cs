@@ -41,7 +41,7 @@ public class MenuTransition : MonoBehaviour {
             Goto(5);
         }
 
-		//if (desiredPos != menus.localPosition || startFadeIn) {
+		if (desiredPos != menus.localPosition || startFadeIn) {
             float fracComplete = (Time.time - startTime) / transitionTime;
             Debug.Log(fracComplete);
             menus.localPosition = Vector3.Lerp(menus.localPosition, desiredPos, fracComplete);
@@ -56,7 +56,7 @@ public class MenuTransition : MonoBehaviour {
                 FadeOut(prevMenuObj, fracComplete);
                 FadeIn(currentMenuObj, fracComplete);
             }
-       // }
+        }
 	}
 
     public void GoNext() {
