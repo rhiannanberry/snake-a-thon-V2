@@ -17,6 +17,8 @@ public class Controller : MonoBehaviour
     public SaveData save;
     public List<Palette> palettes = new List<Palette>();
 
+    private bool loading = false;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -38,13 +40,13 @@ public class Controller : MonoBehaviour
         
     }
 
-    public void spawnFood(GameObject head, int pieces)
+    public void spawnFood(Vector2 location, int pieces)
     {
         //32 across
         for (int i = 0; i < pieces; i++)
         {
             Vector2 loc = Tools.randomInRange();
-            while (Vector2.Distance(loc, head.transform.position) < 3)
+            while (Vector2.Distance(loc, location) < 3)
             {
                 loc = Tools.randomInRange();
             }
@@ -53,6 +55,8 @@ public class Controller : MonoBehaviour
     }
     public void LoadScene(int scene) {
         SceneManager.LoadScene(scene);
+        
+        
     }
 
     public Palette getCurrentPalette() {
@@ -83,6 +87,19 @@ public class Controller : MonoBehaviour
     {
         save.stats.score += score;
         save.stats.totalScore += score;
+    }
+
+    public void StartRun() {
+        Camera c = Camera.main;
+        Vector2 center = c.ScreenToWorldPoint(new Vector2(c.pixelWidth / 2, c.pixelHeight / 2));
+        spawnFood(center, 30);
+    }
+
+    //death handler. Organizes stats acheives and destruction of snake
+    public void EndRun(GameObject snake) {
+        Debug.Log("kill");
+        snake.GetComponent<Snake>().Kill();
+        LoadScene(4);
     }
 
 }

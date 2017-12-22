@@ -16,23 +16,18 @@ public class GameScreenUI : MonoBehaviour {
 	void Start () {
         scoreText = GameObject.Find("Score").GetComponent<Text>();
         timeText = GameObject.Find("Time").GetComponent<Text>();
-
-        score = 0;
-        time = 0;
+        score = GameObject.Find("SnakeHead").GetComponent<Snake>().score;
+        time = GameObject.Find("SnakeHead").GetComponent<Snake>().runTime; 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        time += Time.deltaTime;
-        timeText.text = System.Math.Round(time, 2).ToString();
-    }
 
-    public void setTime(int start = 0) {
-        time = start;
-    }
-
-    public void addToScore(int addition) {
-        score += addition;
-        scoreText.text = "score: " + score.ToString();
+    // Update is called once per frame
+    void Update() {
+        if (GameObject.Find("SnakeHead") != null) {
+            time = GameObject.Find("SnakeHead").GetComponent<Snake>().runTime;
+            timeText.text = System.Math.Round(time, 2).ToString();
+            score = GameObject.Find("SnakeHead").GetComponent<Snake>().score;
+            scoreText.text = "score: " + score.ToString();
+        }
+        
     }
 }

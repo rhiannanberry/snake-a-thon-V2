@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4518657827309306}
   - component: {fileID: 212901380260857744}
-  - component: {fileID: 114980272538797470}
+  - component: {fileID: 114055493956851494}
   - component: {fileID: 61348361786712056}
   - component: {fileID: 50430849012512974}
   - component: {fileID: 114788508162115040}
@@ -89,6 +89,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114055493956851494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1468925657080056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b964d4f8f6ba57843bf510736a756d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snakeBody: {fileID: 1480430293692310, guid: ce5d74b2ea1d77c45868d0248e61e7c1, type: 2}
+  bodyParts: []
+  maxSpeed: 5
+  currentSpeed: 0
+  acceleration: 0.5
+  rotationDebuff: 0
+  score: 0
+  runTime: 0
+  distance: 0
 --- !u!114 &114788508162115040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,22 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968ed860cb3811a47a376f67014cefcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114980272538797470
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1468925657080056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 542f58f64f501ab4583cd2f2376db693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 5
-  acceleration: 0.5
-  snakeBody: {fileID: 1480430293692310, guid: ce5d74b2ea1d77c45868d0248e61e7c1, type: 2}
-  speed: 0
-  bodyParts: []
 --- !u!212 &212901380260857744
 SpriteRenderer:
   m_ObjectHideFlags: 1

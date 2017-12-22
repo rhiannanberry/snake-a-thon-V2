@@ -9,7 +9,7 @@ public class SnakeBodyMove : MonoBehaviour {
     // Use this for initialization
     void Start () {
         head = GameObject.Find("SnakeHead");
-        List<GameObject> parts = head.GetComponent<SnakeMove>().bodyParts;
+        List<GameObject> parts = head.GetComponent<Snake>().bodyParts;
         if (parts.Count == 0)
         {
             parent = head;
@@ -18,7 +18,7 @@ public class SnakeBodyMove : MonoBehaviour {
             parent = parts[parts.Count - 1];
         }
         position = parts.Count;
-        head.GetComponent<SnakeMove>().bodyParts.Add(gameObject);
+        head.GetComponent<Snake>().bodyParts.Add(gameObject);
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class SnakeBodyMove : MonoBehaviour {
         diff.Normalize();
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-        float speed = head.GetComponent<SnakeMove>().speed;
+        float speed = head.GetComponent<Snake>().currentSpeed;
         //im mostly pleased with this movement
         //just kidding i fucking hate it
         if (Vector2.Distance(parent.transform.position, transform.position) > 1)

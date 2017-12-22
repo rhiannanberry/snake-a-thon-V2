@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CustomizationScreen.unity
     guid: 95983e5c488e84a418d0d5af345ed40b
+  - enabled: 1
+    path: Assets/Scenes/PostDeathMenu.unity
+    guid: b420e27050f2e8c4392b174e9372d165

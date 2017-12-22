@@ -6,7 +6,7 @@ public class Food : MonoBehaviour {
     void OnStart() {
         //set sprite/food type here
     }
-	void OnTriggerEnter(Collider2D other) {
+	void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
 
         }
