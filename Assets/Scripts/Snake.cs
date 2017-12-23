@@ -42,11 +42,10 @@ public class Snake : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Food") {
-            Debug.Log("kill?");
             //add to score ammendum: Score should not be _set_ in ui, only referenced
             //add a method to ui to pull stats from here to update
             score++;
-            maxSpeed += 0.5f;
+            collision.gameObject.GetComponent<Food>().Eat(gameObject);
     
             GameObject newBody;
             if (bodyParts.Count == 0) {
@@ -61,7 +60,6 @@ public class Snake : MonoBehaviour {
             }
             controller.spawnFood(transform.position, Random.Range(1, 4));
         } else {
-            Debug.Log("kill?");
             controller.EndRun(gameObject);
         }
     }

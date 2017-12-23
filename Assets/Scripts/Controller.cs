@@ -51,6 +51,7 @@ public class Controller : MonoBehaviour
                 loc = Tools.randomInRange();
             }
             Transform food = Instantiate(foodPrefab, loc, Quaternion.identity);
+            food.GetComponent<Food>().Randomize();
         }
     }
     public void LoadScene(int scene) {
@@ -71,6 +72,7 @@ public class Controller : MonoBehaviour
         foreach (Text txt in text) {
             txt.color = palettes[currentPalette].main;
         }
+        transform.GetChild(0).GetComponent<CursorEffects>().SetCursorColor(palettes[currentPalette].main);
     }
 
     public void attachLoadData()
@@ -92,12 +94,11 @@ public class Controller : MonoBehaviour
     public void StartRun() {
         Camera c = Camera.main;
         Vector2 center = c.ScreenToWorldPoint(new Vector2(c.pixelWidth / 2, c.pixelHeight / 2));
-        spawnFood(center, 30);
+        spawnFood(center, 3);
     }
 
     //death handler. Organizes stats acheives and destruction of snake
     public void EndRun(GameObject snake) {
-        Debug.Log("kill");
         snake.GetComponent<Snake>().Kill();
         LoadScene(4);
     }

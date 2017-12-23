@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Food
   - Persistent
+  - Cursor
   layers:
   - Default
   - TransparentFX

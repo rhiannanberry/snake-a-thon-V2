@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class MenuTransition : MonoBehaviour {
     public float transitionTime = 2.0f;
+    public float alphaMultiplier = 1.20f;
     private float startTime;
     private int currentMenu = 1;
     private RectTransform menus;
-    private Vector3 desiredPos;
 
-
-    bool startFadeIn = true;
     private List<GameObject> menuObjects = new List<GameObject>();
     private GameObject currentMenuObj;
     private GameObject prevMenuObj;
@@ -18,8 +16,6 @@ public class MenuTransition : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         menus = GetComponent<RectTransform>();
-        desiredPos = menus.localPosition;
-
         foreach (Transform child in transform) {
             menuObjects.Add(child.gameObject);
         }
@@ -41,29 +37,19 @@ public class MenuTransition : MonoBehaviour {
             Goto(5);
         }
 
-		if (desiredPos != menus.localPosition || startFadeIn) {
-            float fracComplete = (Time.time - startTime) / transitionTime;
-            Debug.Log(fracComplete);
-            menus.localPosition = Vector3.Lerp(menus.localPosition, desiredPos, fracComplete);
-            if (startFadeIn) {
-                FadeIn(currentMenuObj, fracComplete);
-                
-                if (fracComplete >= 1) {
-                    startFadeIn = false;
-                    
-                }
-            } else {
-                FadeOut(prevMenuObj, fracComplete);
-                FadeIn(currentMenuObj, fracComplete);
-            }
+        float fracComplete = (Time.time - startTime) / transitionTime;
+        menus.localPosition = Vector3.Lerp(menus.localPosition, -1*currentMenuObj.GetComponent<RectTransform>().localPosition, fracComplete);
+        FadeIn(currentMenuObj, fracComplete);
+        if (prevMenuObj != null) {
+            FadeOut(prevMenuObj, fracComplete);
         }
+            
 	}
 
     public void GoNext() {
         prevMenuObj = currentMenuObj;
         currentMenuObj = menuObjects[currentMenu];
         currentMenu++;
-        desiredPos.x -= 800;
         startTime = Time.time;
     }
 
@@ -71,20 +57,11 @@ public class MenuTransition : MonoBehaviour {
         prevMenuObj = currentMenuObj;
         currentMenu--;
         currentMenuObj = menuObjects[currentMenu-1];
-        desiredPos.x += 800;
         startTime = Time.time;
     }
 
     public void Goto(int menuNum) {
         prevMenuObj = currentMenuObj;
-        if (menuNum == 5) {
-            //when you have no ach, play again menu will be below
-            desiredPos.y -= 500;
-        } else {
-            
-            desiredPos.x += 800 * (currentMenu - menuNum);
-            Debug.Log(desiredPos);
-        }
         currentMenu = menuNum;
         currentMenuObj = menuObjects[currentMenu - 1];
         startTime = Time.time;
@@ -96,7 +73,7 @@ public class MenuTransition : MonoBehaviour {
     }
 
     private void FadeOut(GameObject menu, float fracComplete) {
-        menu.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(1, 0, fracComplete);
+        menu.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(1, 0, fracComplete * alphaMultiplier);
     }
 
 

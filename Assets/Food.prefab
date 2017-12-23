@@ -90,6 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f08c7f36a709c448843510dd4fcb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foods:
+  - {fileID: 21300000, guid: 3a0e5ede4d4e8224ca9496e82c524e2d, type: 3}
+  - {fileID: 21300000, guid: 87acdd0e3b5c7f7459b8ef093c537e21, type: 3}
+  - {fileID: 21300000, guid: 3f7a085398a35704e93691a8f8216f7b, type: 3}
 --- !u!212 &212568843078388856
 SpriteRenderer:
   m_ObjectHideFlags: 1
